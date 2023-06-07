@@ -3,11 +3,14 @@
   --desaturated-blue-bg:hsl(222, 26%, 31%);
   --desaturated-blue-toggle:hsl(223, 31%, 20%);
   --red:hsl(6, 63%, 50%);
+  --Dark-red-key-shadow: hsl(6, 70%, 34%);
   --desaturated-blue-screen:hsl(224, 36%, 15%);
   --text-white:hsl(0, 0%, 100%);
   --dark-grayish-blue: hsl(221, 14%, 31%);
   --Light-grayish-orange-keys: hsl(30, 25%, 89%);
+  --Grayish-orange-key-shadow: hsl(28, 16%, 65%);
   --Desaturated-dark-blue-keys: hsl(225, 21%, 49%);
+  --Desaturated-dark-blue-key-shadow: hsl(224, 28%, 35%);
 }
 *{
   box-sizing: border-box;
@@ -24,7 +27,7 @@ body{
   padding-top: 3rem;
   margin: auto;
   width: 85%;
-  max-width: 400px;
+  max-width: 450px;
 }
 
 /* Calculator header */
@@ -105,7 +108,7 @@ header{
   grid-template-columns: 1fr 1fr 1fr 1fr;
   background-color: var(--desaturated-blue-toggle);
   column-gap: 12px;
-  row-gap: 10px;
+  row-gap: 15px;
   padding: 1.2rem 1rem ;
   border-radius: 10px;
   color: var(--dark-grayish-blue);
@@ -125,11 +128,13 @@ header{
   font-weight: 700;
   color: var(--text-white);
   background-color: var(--Desaturated-dark-blue-keys);
+  box-shadow: 0px 5px var(--Desaturated-dark-blue-key-shadow);
 }
 
 .calc-button{
   font-size: 2rem;
   background-color: var(--Light-grayish-orange-keys);
+  box-shadow: 0px 5px var(--Light-grayish-orange-keys);
 }
 
 .reset-button{
@@ -141,5 +146,6 @@ header{
   grid-column-start: 3;
   grid-column-end: 5;
   background-color: var(--red);
+  box-shadow: 0px 5px var(--Dark-red-key-shadow);
 }
 
