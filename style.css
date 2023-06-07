@@ -73,14 +73,30 @@ header{
   padding:6px 5px;
 }
 
-.slider-wrapper::after{
-  content: '';
+.toggle-circle{
+  position: relative;
   display: block;
   width: 15px;
   height: 15px;
   background-color: var(--red);
   border-radius: 20px;
+  transition-duration: .15s;
+  transition-timing-function: linear;
 }
+
+.toggle-circle:hover{
+  cursor: pointer;
+}
+.slide-2{
+  transform: translateX(22px);
+}
+
+.slide-3{
+  transform: translateX(45px);
+}
+
+
+
 
 /* Display */
 
