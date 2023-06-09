@@ -89,6 +89,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: 700;
 }
 
 header.theme-2{
@@ -124,7 +125,7 @@ header.theme-3{
   display: flex;
   justify-content: space-around;
   margin-bottom: .3rem;
-  font-size: .7rem;
+  font-size: .9rem;
 }
 
 .slider-wrapper{
@@ -194,6 +195,7 @@ header.theme-3{
 
 .display-text{
   font-size: 2rem;
+  font-weight: 700;
   margin-right: 1rem;
 }
 
@@ -235,6 +237,10 @@ header.theme-3{
   box-shadow: 0px 5px var(--Desaturated-dark-blue-key-shadow);
 }
 
+.color-button:hover{
+  filter: brightness(150%);
+}
+
 .color-button.theme-2{
   background-color: var(--Dark-moderate-cyan-key-background);
   box-shadow: 0px 5px var(--Very-dark-cyan-key-shadow);
@@ -252,11 +258,20 @@ header.theme-3{
   font-weight: 700;
 }
 
+.calc-button:hover{
+  filter: brightness(150%);
+}
+
 .calc-button.theme-2{
   background-color: var(--Light-grayish-yellow-key-background);
   box-shadow: 0px 6px var(--Dark-grayish-orange-key-shadow);
   color: var(--Very-dark-grayish-yellow);
 }
+
+.calc-button.theme-2:hover{
+  filter: brightness(110%);
+}
+
 
 .calc-button.theme-3{
   background-color: var(--Very-dark-violet-key-background);
@@ -275,6 +290,10 @@ header.theme-3{
   grid-column-end: 5;
   background-color: var(--red);
   box-shadow: 0px 5px var(--Dark-red-key-shadow);
+}
+
+.equals-button:hover{
+  filter: brightness(150%);
 }
 
 .equals-button.theme-2{
