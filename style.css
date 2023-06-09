@@ -91,6 +91,14 @@ header{
   align-items: center;
 }
 
+header.theme-2{
+  color: var(--Very-dark-grayish-yellow);
+}
+
+header.theme-3{
+  color: var(--Light-yellow);
+}
+
 .theme-wrapper{
   display: flex;
   flex-direction: row;
@@ -129,6 +137,10 @@ header{
   background-color: var(--Grayish-red-toggle-background-keypad-background);
 }
 
+.slider-wrapper.theme-3{
+  background-color: var(--Very-dark-violet-toggle-background-keypad-background-screen-background);
+}
+
 .toggle-circle{
   position: relative;
   display: block;
@@ -146,10 +158,12 @@ header{
 
 .toggle-circle.theme-2{
   transform: translateX(22px);
+  background-color: var(--Orange-key-background-toggle);
 }
 
 .toggle-circle.theme-3{
   transform: translateX(45px);
+  background-color: var(--Pure-cyan-key-background-toggle);
 }
 
 
@@ -167,6 +181,15 @@ header{
   display: flex;
   justify-content: end;
   align-items: center;
+}
+
+.calc-display.theme-2{
+  background-color: var(--Very-light-gray-screen-background);
+  color: var(--Very-dark-grayish-yellow);
+}
+.calc-display.theme-3{
+  background-color: var(--Very-dark-violet-toggle-background-keypad-background-screen-background);
+  color:var(--Light-yellow);
 }
 
 .display-text{
@@ -187,6 +210,14 @@ header{
   color: var(--dark-grayish-blue);
 }
 
+.calc-buttons-wrapper.theme-2{
+  background-color: var(--Grayish-red-toggle-background-keypad-background);
+}
+
+.calc-buttons-wrapper.theme-3{
+  background-color: var(--Very-dark-violet-toggle-background-keypad-background-screen-background);
+}
+
 .calc-buttons-wrapper button{
   width: 100%;
   height: 4rem;
@@ -204,12 +235,35 @@ header{
   box-shadow: 0px 5px var(--Desaturated-dark-blue-key-shadow);
 }
 
+.color-button.theme-2{
+  background-color: var(--Dark-moderate-cyan-key-background);
+  box-shadow: 0px 5px var(--Very-dark-cyan-key-shadow);
+}
+
+.color-button.theme-3{
+  background-color: var(--Dark-violet-key-background);
+  box-shadow: 0px 5px var(--Vivid-magenta-key-shadow);
+}
+
 .calc-button{
   font-size: 2rem;
   background-color: var(--Light-grayish-orange-keys);
   box-shadow: 0px 6px var(--Grayish-orange-key-shadow);
   font-weight: 700;
 }
+
+.calc-button.theme-2{
+  background-color: var(--Light-grayish-yellow-key-background);
+  box-shadow: 0px 6px var(--Dark-grayish-orange-key-shadow);
+  color: var(--Very-dark-grayish-yellow);
+}
+
+.calc-button.theme-3{
+  background-color: var(--Very-dark-violet-key-background);
+  box-shadow: 0px 5px var(--Dark-magenta-key-shadow);
+  color: var(--Light-yellow);
+}
+
 
 .reset-button{
   grid-column-start: 1;
@@ -222,4 +276,16 @@ header{
   background-color: var(--red);
   box-shadow: 0px 5px var(--Dark-red-key-shadow);
 }
+
+.equals-button.theme-2{
+  background-color: var(--Orange-key-background-toggle);
+  box-shadow: 0px 5px var(--Dark-orange-key-shadow);
+}
+
+.equals-button.theme-3{
+  background-color: var(--Pure-cyan-key-background-toggle);
+  box-shadow: 0px 5px var(--Soft-cyan-key-shadow);
+  color: var(--Very-dark-blue);
+}
+
 

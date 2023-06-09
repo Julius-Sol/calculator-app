@@ -1,6 +1,10 @@
-const toggleCircle = document.querySelector(".toggle-circle");
 const body = document.querySelector('body');
+const sliderWrapper = document.querySelector(".slider-wrapper");
+const toggleCircle = document.querySelector(".toggle-circle");
+const calcDisplay = document.querySelector(".calc-display");
 const calcButtonWrapper = document.querySelector('.calc-buttons-wrapper');
+const header = document.querySelector('header');
+const calcButtons =  [...calcButtonWrapper.children]
 
 let count = 0;
 
@@ -22,10 +26,15 @@ toggleCircle.addEventListener("click", ()=>{
     count = 0;
   }else if(count < 2){
     count++;
-    toggleCircle.classList.toggle(`theme-${count+1}`);
     body.classList.toggle(`theme-${count+1}`);
+    header.classList.toggle(`theme-${count+1}`);
+    sliderWrapper.classList.toggle(`theme-${count+1}`);
+    toggleCircle.classList.toggle(`theme-${count+1}`);
+    calcDisplay.classList.toggle(`theme-${count+1}`);
     calcButtonWrapper.classList.toggle(`theme-${count+1}`);
-    
+    calcButtons.forEach((element)=>{
+      element.classList.toggle(`theme-${count+1}`);
+    })
   }
-  console.log(count);
+ 
 })
