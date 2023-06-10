@@ -1,7 +1,7 @@
 const display = document.querySelector(".calc-display");
 const displayText = document.querySelector(".display-text");
 
-let statement = '';
+
 let currentValue = '';
 let prev = '';
 let currentAction = '';
@@ -17,8 +17,8 @@ calcButtonWrapper.addEventListener('click',(element)=>{
           ResetCalc();
           break;
         case 'delete':
-          let nospace = currentValue.trim();
-          currentValue = nospace.substring(0,nospace.length-1);
+          console.log(typeof(currentValue)); 
+          currentValue = currentValue.substring(0,currentValue.length-1);
           break;
         case 'addition':
           currentAction = '+'
@@ -26,13 +26,19 @@ calcButtonWrapper.addEventListener('click',(element)=>{
           currentValue = '';
           break;
         case 'subtract':
-          statement = statement + ' - '
+          currentAction = '-'
+          prev = currentValue;
+          currentValue = '';
           break;
         case 'multiply':
-          statement = statement + ' * '
+          currentAction = '*'
+          prev = currentValue;
+          currentValue = '';
           break;
         case 'divide':
-          statement = statement + ' / '
+          currentAction = '/'
+          prev = currentValue;
+          currentValue = '';
           break;
         case 'decimal':
           if(currentValue.includes('.')){
@@ -40,6 +46,9 @@ calcButtonWrapper.addEventListener('click',(element)=>{
           }else{
             AppendStatement('.');
           }
+          break;
+        case 'equals':
+            Evaluation(prev,currentValue,currentAction);
           break;
         default:
           console.log("action")
@@ -60,10 +69,37 @@ const AppendStatement = (value)=>{
 }
 
 const ResetCalc = ()=>{
-  statement = '';
   currentValue = '';
   prev = '';
   prevCharacter = '';
+}
+
+const Evaluation = (value1,value2,operation) =>{
+  switch(operation){
+    case '+':
+      currentValue = Number(value1)  + Number(value2);
+      currentValue = currentValue.toString();
+      displayText.textContent = currentValue;
+      break;
+      case '-':
+      currentValue = Number(value1)  - Number(value2);
+      currentValue = currentValue.toString();
+      displayText.textContent = currentValue;
+      break;
+      case '/':
+      currentValue = Number(value1)  / Number(value2);
+      currentValue = currentValue.toString();
+      displayText.textContent = currentValue;
+      break;
+      case '*':
+      currentValue = Number(value1)  * Number(value2);
+      currentValue = currentValue.toString();
+      displayText.textContent = currentValue;
+      break;
+    default:
+      console.log('error');
+  }
+
 }
 
 
