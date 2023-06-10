@@ -6,6 +6,13 @@ let currentValue = '';
 let prev = '';
 let currentAction = '';
 
+const RemoveFocus = ()=>{
+  if(document.querySelector('.focus')!= null){
+    let foucsedElement = document.querySelector('.focus');
+    foucsedElement.classList.remove('focus');
+  }
+}
+
 //Eventlistner to know if button on calculator is being pressed. 
 //Function to handle the appropiate action for clicking a button.
 calcButtonWrapper.addEventListener('click',(element)=>{
@@ -24,7 +31,8 @@ calcButtonWrapper.addEventListener('click',(element)=>{
           currentValue = currentValue.substring(0,currentValue.length-1);
           break;
         case 'addition':
-          currentAction = '+'
+          currentAction = '+';
+          FocusSelector(button);
           if(currentValue === ''){
 
           }
@@ -38,7 +46,8 @@ calcButtonWrapper.addEventListener('click',(element)=>{
           
           break;
         case 'subtract':
-          currentAction = '-'
+          currentAction = '-';
+          FocusSelector(button);
           if(currentValue === ''){
 
           }
@@ -51,7 +60,8 @@ calcButtonWrapper.addEventListener('click',(element)=>{
           }
           break;
         case 'multiply':
-          currentAction = '*'
+          currentAction = '*';
+          FocusSelector(button);
           if(currentValue === ''){
 
           }
@@ -64,7 +74,8 @@ calcButtonWrapper.addEventListener('click',(element)=>{
           }
           break;
         case 'divide':
-          currentAction = '/'
+          currentAction = '/';
+          FocusSelector(button);
           if(currentValue === ''){
 
           }
@@ -116,29 +127,31 @@ const AppendStatement = (value)=>{
 }
 
 const ResetCalc = ()=>{
+  RemoveFocus();
   currentValue = '';
   prev = '';
   currentAction = '';
 }
 
 const Evaluation = (value1,value2,operation) =>{
+  RemoveFocus();
   switch(operation){
     case '+':
       currentValue = Number(value1)  + Number(value2);
       currentValue = currentValue.toString();
       displayText.textContent = currentValue;
       break;
-      case '-':
+    case '-':
       currentValue = Number(value1)  - Number(value2);
       currentValue = currentValue.toString();
       displayText.textContent = currentValue;
       break;
-      case '/':
+    case '/':
       currentValue = Number(value1)  / Number(value2);
       currentValue = currentValue.toString();
       displayText.textContent = currentValue;
       break;
-      case '*':
+    case '*':
       currentValue = Number(value1)  * Number(value2);
       currentValue = currentValue.toString();
       displayText.textContent = currentValue;
@@ -149,4 +162,7 @@ const Evaluation = (value1,value2,operation) =>{
 
 }
 
-
+const FocusSelector = (actionButton)=>{
+  RemoveFocus();
+  actionButton.classList.add('focus');
+}

@@ -307,4 +307,16 @@ header.theme-3{
   color: var(--Very-dark-blue);
 }
 
+.focus{
+  color: aqua;
+  background-color: black;
+}
 
+.calc-button.focus.theme-3{
+  color: aqua;
+  background-color: black;
+}
+.calc-button.focus.theme-2{
+  color: aqua;
+  background-color: black;
+}
