@@ -11,6 +11,9 @@ let currentAction = '';
 calcButtonWrapper.addEventListener('click',(element)=>{
   if(element.target.tagName === 'BUTTON'){
     let button = element.target;
+    if(currentAction === '=' && !(button.hasAttribute('data-action'))){
+      ResetCalc();
+    }
     if(button.hasAttribute('data-action')){
       switch(button.getAttribute('data-action')) {
         case 'reset':
@@ -22,23 +25,56 @@ calcButtonWrapper.addEventListener('click',(element)=>{
           break;
         case 'addition':
           currentAction = '+'
-          prev = currentValue;
-          currentValue = '';
+          if(currentValue === ''){
+
+          }
+          else if (currentValue != '' && prev != ''){
+            Evaluation(prev,currentValue,currentAction);
+            prev = '';
+          }else{
+            prev = currentValue;
+            currentValue = '';
+          }
+          
           break;
         case 'subtract':
           currentAction = '-'
-          prev = currentValue;
-          currentValue = '';
+          if(currentValue === ''){
+
+          }
+          else if (currentValue != '' && prev != ''){
+            Evaluation(prev,currentValue,currentAction);
+            prev = '';
+          }else{
+            prev = currentValue;
+            currentValue = '';
+          }
           break;
         case 'multiply':
           currentAction = '*'
-          prev = currentValue;
-          currentValue = '';
+          if(currentValue === ''){
+
+          }
+          else if (currentValue != '' && prev != ''){
+            Evaluation(prev,currentValue,currentAction);
+            prev = '';
+          }else{
+            prev = currentValue;
+            currentValue = '';
+          }
           break;
         case 'divide':
           currentAction = '/'
-          prev = currentValue;
-          currentValue = '';
+          if(currentValue === ''){
+
+          }
+          else if (currentValue != '' && prev != ''){
+            Evaluation(prev,currentValue,currentAction);
+            prev = '';
+          }else{
+            prev = currentValue;
+            currentValue = '';
+          }
           break;
         case 'decimal':
           if(currentValue.includes('.')){
@@ -49,6 +85,8 @@ calcButtonWrapper.addEventListener('click',(element)=>{
           break;
         case 'equals':
             Evaluation(prev,currentValue,currentAction);
+            currentAction = '=';
+            prev = '';
           break;
         default:
           console.log("action")
@@ -58,7 +96,16 @@ calcButtonWrapper.addEventListener('click',(element)=>{
       AppendStatement(button.innerHTML);
     }
   }
-  displayText.textContent = currentValue;
+  if(currentValue === '' && prev === ''){
+    displayText.textContent = 0;
+  }else if(currentValue != ''){
+    displayText.textContent = currentValue;
+  }else if(prev != '' && currentAction !=''){
+    displayText.textContent = prev;
+  }
+  else{
+    displayText.textContent = 0;
+  }
   console.log('current value: ' + currentValue);
   console.log('prev value: ' + prev);
   console.log('current action: ' + currentAction);
@@ -71,7 +118,7 @@ const AppendStatement = (value)=>{
 const ResetCalc = ()=>{
   currentValue = '';
   prev = '';
-  prevCharacter = '';
+  currentAction = '';
 }
 
 const Evaluation = (value1,value2,operation) =>{
