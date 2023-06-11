@@ -38,7 +38,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live site URL](https://julius-sol.github.io/calculator-app/)
 
 ## My process
 
@@ -61,4 +61,4 @@ keys from the operator keys by assigning the opertaor keys a "data-action" attri
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
+**- Website - [Add your name here](https://www.your-site.com)**
